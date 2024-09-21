@@ -19,7 +19,7 @@ export const isAdminAuthenticated = catchAsyncErrors(async(req,res,next)=>{
 });
 
 export const isPatientAuthenticated = catchAsyncErrors(async(req,res,next)=>{
-    const token = req.cookies.PatientToken;
+    const token = req.cookies.patientToken;
     if(!token)
     {
         return next(new ErrorHandler("Patient Not Authenticated!",400));
