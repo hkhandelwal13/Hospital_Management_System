@@ -55,3 +55,30 @@ export const login = catchAsyncErrors(async(req,res,next)=> {
 //     message : "User Logged In Successfully!",
 // })
 })
+
+export const addNewAdmin = catchAsyncErrors(async(req,res,next)=>{
+   const{firstName,lastName,email,phone,nic,dob,gender,password,} = req.body;
+   if(
+    !firstName || !lastName || !email || !phone || !nic || !dob || !gender || !password)
+   {
+             return next(new ErrorHandler("Please fill the full form",400));
+   }
+   const isRegistered = await User.findOne({email});
+   if(isRegistered)
+   {
+    return next(new ErrorHandler(`${isRegistered.role} with this Email Already Exists`));
+   }
+   const admin = await User.create({firstName,lastName,email,phone,nic,dob,gender,password,role:"Admin"})
+   res.status(200).json({
+    sucess:true,
+    message:"New Admin Registered!",
+   });
+});
+
+export const getAllDocters = catchAsyncErrors(async(req,res,next)=>{
+     const docters = await User.find({role : "Doctor"});
+     res.status(200).json({
+        success : true,
+        docters,
+     });
+});

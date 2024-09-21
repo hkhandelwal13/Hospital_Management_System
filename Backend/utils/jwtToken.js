@@ -8,3 +8,5 @@ export const generateToken = (user,message,statusCode,res) => {
         message,user,token,
     });
 };
+
+

@@ -88,3 +88,14 @@ userSchema.methods.generateJsonWebToken = function()
 };
 
 export const User = mongoose.model("User",userSchema)
+
+// {
+//     "firstName" : "Zeeshan",
+//     "lastName" : "khan",
+//     "email" : "admin2@gmail.com",
+//     "phone" : 95299935901,
+//     "password" : "87654321",
+//     "gender" : "male",
+//     "dob" : "16-02-2003",
+//     "nic" : "123456789012"
+// }
