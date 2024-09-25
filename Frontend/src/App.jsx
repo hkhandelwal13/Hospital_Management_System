@@ -6,14 +6,16 @@ import About from './pages/About'
 import Register from './pages/Register'
 import Login from './pages/Login'
 import Home from './pages/Home'
+import Navbar from './components/Navbar'
  import { ToastContainer } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
 const App = () => {
   return (
     <>
       <Router>
+        <Navbar></Navbar>
         <Routes>
-        <Route path='/home' element={<Home/>}></Route>
+        <Route path='/' element={<Home/>}></Route>
         <Route path='/appointment' element={<Appointment/>}></Route>
         <Route path='/about' element={<About/>}></Route>
         <Route path='/register' element={<Register/>}></Route>
