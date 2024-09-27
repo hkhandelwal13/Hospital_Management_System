@@ -5,6 +5,7 @@ import { Context } from '../main';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react'
 import { toast } from 'react-toastify';
+import axios from 'axios';
 // import { navigateTo } from 'react-router-dom';
 const Navbar = () => {
     const [show,setShow] = useState(false);
@@ -19,12 +20,12 @@ const Navbar = () => {
                 toast.success(res.data.message);
                 setIsAuthenticated(false);
             }).catch(err=>{
-                toast.error(err.message.data.message);
-            })
+                toast.error(err.response.data.message);
+            });
 
             
            
-    }
+    };
     const gotoLogin = () =>{
      navigate("/login");
     };
@@ -39,7 +40,7 @@ const Navbar = () => {
         <Link to={"/about"}>About Us</Link>
 
       </div>
-      {isAuthenticated ? (<button className='logoutBtn btn' onClick={handleLogout}>LOGOUT</button>):(<button className='logoutBtn btn' onClick={gotoLogin}>LOGIN</button>)}
+      {isAuthenticated ? (<button className='logoutBtn btn' onClick={handleLogout}>LOGOUT</button>):(<button className='loginBtn btn' onClick={gotoLogin}>LOGIN</button>)}
       </div>
      
     </nav>

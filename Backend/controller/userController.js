@@ -71,7 +71,7 @@ export const addNewAdmin = catchAsyncErrors(async(req,res,next)=>{
    }
    const admin = await User.create({firstName,lastName,email,phone,nic,dob,gender,password,role:"Admin"})
    res.status(200).json({
-    sucess:true,
+    success:true,
     message:"New Admin Registered!",
    });
 });
@@ -87,7 +87,7 @@ export const getAllDocters = catchAsyncErrors(async(req,res,next)=>{
 export const getuserDetails = catchAsyncErrors(async(req,res,next)=>{
      const user = req.user;
      res.status(200).json({
-        sucess : true,
+        success : true,
         user,
      });
 });
@@ -97,7 +97,7 @@ export const logoutAdmin = catchAsyncErrors(async(req,res,next)=>{
             httpOnly : true,
             expires : new Date(Date.now()),
         }).json({
-            sucess : true,
+            success : true,
             message : "Admin Logged Out Successfully",
         });
 });
@@ -107,7 +107,7 @@ export const logoutPatient = catchAsyncErrors(async(req,res,next)=>{
         httpOnly : true,
         expires : new Date(Date.now()),
     }).json({
-        sucess : true,
+        success : true,
         message : "Patient Logged Out Successfully",
     });
 });
