@@ -119,7 +119,7 @@ export const addNewDoctor = catchAsyncErrors(async(req,res,next)=>{
           }
 
           const {docAvatar} = req.files;
-          const  allowedFormats = ["image/png","image/jpg","image/webp"];
+          const  allowedFormats = ["image/png","image/jpg","image/webp","image/jpeg"];
           if(!allowedFormats.includes(docAvatar.mimetype)){
             return next(new ErrorHandler("File format not allowed! ",400));
           }

@@ -1,4 +1,5 @@
 import React from 'react'
+import { GiHamburgerMenu } from "react-icons/gi";
 import {useContext,createContext} from "react";
 import { Link } from 'react-router-dom';
 import { Context } from '../main.jsx';
@@ -42,7 +43,9 @@ const Navbar = () => {
       </div>
       {isAuthenticated ? (<button className='logoutBtn btn' onClick={handleLogout}>LOGOUT</button>):(<button className='loginBtn btn' onClick={gotoLogin}>LOGIN</button>)}
       </div>
-     
+     <div className='hamburger btn' onClick={()=> setShow(!show)}>
+      <GiHamburgerMenu></GiHamburgerMenu>
+     </div>
     </nav>
   )
 }

@@ -8,7 +8,7 @@ const Biography = ({imageUrl}) => {
       </div>
       <div className='banner'>
        <p>Biography</p>
-       <h3>Who we are</h3>
+       <h3>Who are we</h3>
        <p>
        At ZeeCare, we are committed to enhancing healthcare delivery through innovative technology.
         Our Hospital Management System streamlines administrative tasks, optimizes patient care, 
