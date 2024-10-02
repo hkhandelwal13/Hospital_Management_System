@@ -1,7 +1,7 @@
 import React from 'react'
 import {useContext,createContext} from "react";
 import { Link } from 'react-router-dom';
-import { Context } from '../main';
+import { Context } from '../main.jsx';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react'
 import { toast } from 'react-toastify';

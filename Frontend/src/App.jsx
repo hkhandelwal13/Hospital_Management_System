@@ -11,6 +11,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {Context} from "./main";
 import { useContext } from 'react'
+import axios from 'axios'
 const App = () => {
   const {isAuthenticated,setIsAuthenticated,setUser} = useContext(Context);
   useEffect(()=>{
