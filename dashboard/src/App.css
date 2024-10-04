@@ -77,7 +77,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  width: 550px;
+  width: 750px;
 }
 .add-admin-form form {
   width: 100%;
