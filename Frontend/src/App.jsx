@@ -14,7 +14,7 @@ import {Context} from "./main";
 import { useContext } from 'react'
 import axios from 'axios'
 const App = () => {
-  const {isAuthenticated,setIsAuthenticated,setUser} = useContext(Context);
+  const {isAuthenticated,setIsAuthenticated,user,setUser} = useContext(Context);
   useEffect(()=>{
       const fetchUser = async() => {
         try {
